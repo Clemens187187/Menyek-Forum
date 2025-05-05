@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clemens & Johannes Kreuzer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      text-align: center;
+    }
+    header {
+      background: #222;
+      color: white;
+      padding: 1em;
+    }
+    nav {
+      background: #333;
+      padding: 1em;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      display: none;
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 2em;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    section.active {
+      display: block;
+    }
+    .card {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 1em;
+      background-color: #fafafa;
+      margin-bottom: 20px;
+    }
+    .card img {
+      width: 100%;
+      max-width: 150px;
+      border-radius: 5px;
+    }
+    form input, form textarea {
+      width: 100%;
+      margin: 0.5em 0;
+      padding: 0.5em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      padding: 0.5em 1em;
+      border: none;
+      background-color: #333;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 1em;
+      background: #eee;
+    }
+    #chat-box {
+      height: 200px;
+      overflow-y: scroll;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      background: #fff;
+      text-align: left;
+    }
+  </style>
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+    function sendMessage() {
+      const input = document.getElementById('chat-input');
+      const chatBox = document.getElementById('chat-box');
+      if (input.value.trim() !== '') {
+        const msg = document.createElement('div');
+        msg.textContent = input.value;
+        chatBox.appendChild(msg);
+        input.value = '';
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Menyek-Forum</h1>
+  </header>
+  <nav>
+    <a href="#" onclick="showSection('start')">Start</a>
+    <a href="#" onclick="showSection('termine')">Termine</a>
+    <a href="#" onclick="showSection('tickets')">Tickets</a>
+    <a href="#" onclick="showSection('aktuelles')">Aktuelles</a>
+    <a href="#" onclick="showSection('kontakt')">Kontakt</a>
+    <a href="#" onclick="showSection('shop')">Shop</a>
+    <a href="#" onclick="showSection('feedback')">Feedback</a>
+    <a href="#" onclick="showSection('menyek')">Menyek-Funk</a>
+  </nav>
+
+  <section id="start" class="active">
+    <h2>Clemens Kreuzer</h2>
+    <p>23 Jahre alt und aktuell in Kombination mit schwersten Alkoholikern das gefährlichste Mitglied!</p>
+    <img src="clemens.jpeg" width="200">
+    <h2>Johannes Kreuzer</h2>
+    <p>20 Jahre alt. Nach einem Bierschiss muss das gesamte Viertel evakuiert werden </p>
+    <img src="johannes.jpeg" width="200">
+    <h2>Tanja Tisch</h2>
+    <p>23 Jahre, sieht aus wie 68, fickt aber wie ein 14 Jähriger!</p>
+    <img src="pascal.jpeg" width="200">
+    <h2>Esther Schäfer</h2>
+    <p>25 Jahre, DACKEL!</p>
+    <img src="eva.jpeg" width="200">
+    <h2>Merlon (Nachmane unbekannt)</h2>
+    <p>23 Jahre und hat laut Guinnesbuch der Rekorde die fettesten Milchtüten der Welt!</p>
+    <img src="lou.jpeg" width="200">
+    <h2>Fraule Hobensack</h2>
+    <p>25 Jahre alt, Hingt von Schlüpfen aus dem Watt immernoch mit dem linken Bein</p>
+    <img src="frauke.jpeg" width="200">
+    <h2>Jaquoma</h2>
+    <p>Fickt sich jeden Abend mit einem Giga Dildo in den Schlaf </p>
+    <img src="jacky.jpeg" width="200">
+    <h2>Leon von Heimenirgendwas</h2>
+    <p>entweder sehr Smart oder im extremen sexuellen Kontakt mit seinen Professoren  </p>
+    <img src="Leon.jpeg" width="200">
+    <h2>Kaya Vagina</h2>
+    <p>Hat die längste Scheide der Welt</p>
+    <img src="kaya.jpeg" width="200">
+    <h2>S-Bert Sinzhold</h2>
+    <p>Bei Sichtung sofortigen Sicherheitsabstand von mindestens 6km einnehmen</p>
+    <img src="sinzig.jpeg" width="200">
+
+
+
+
+
+
+  </section>
+
+  <section id="termine">
+    <h2>Aktuelle Termine</h2>
+    <div class="card">
+      <img src="bild1.jpg" alt="Boots Party">
+      <div>
+        <h3>14.05.2025 – Mediziner Boots Party</h3>
+        <p>Feier mit uns auf dem Wasser!</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="bild2.jpg" alt="Street Food">
+      <div>
+        <h3>17.05.2025 – Street Food Festival</h3>
+        <p>Kulinarische Highlights aus aller Welt!</p>
+      </div>
+    </div>
+ <div class="card">
+      <img src="bild1.jpg" alt="Evas Geburtstag">
+      <div>
+        <h3>19.05.2025 – Evas Geburtstag</h3>
+        <p>Wiegenfest unserers Strafrechlich unbekanntesten Menyek!</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="bild3.jpg" alt="Hamburg">
+      <div>
+        <h3>23.–25.05.2025 – Hamburg Reise</h3>
+        <p>Gemeinsam unterwegs in der Hansestadt!</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tickets">
+    <h2>Tickets kaufen</h2>
+    <div class="card">
+      <div>
+        <h3>14.05.2025 – Mediziner Boots Party</h3>
+        <p>Ticketpreis: Ausverkauft</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="kreuzer.clemens.02@web.de">
+          <input type="hidden" name="item_name" value="Ticket - Mediziner Boots Party">
+          <input type="hidden" name="amount" value="15.00">
+          <input type="hidden" name="currency_code" value="EUR">
+          <button type="submit">Ticket kaufen</button>
+        </form>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <h3>17.05.2025 – Street Food Festival</h3>
+        <p>Ticketpreis: 10,00 €</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="kreuzer.clemens.02@web.de">
+          <input type="hidden" name="item_name" value="Ticket - Street Food Festival">
+          <input type="hidden" name="amount" value="10.00">
+          <input type="hidden" name="currency_code" value="EUR">
+          <button type="submit">Ticket kaufen</button>
+        </form>
+      </div>
+    </div>
+ <div class="card">
+      <div>
+        <h3>17.05.2025 – Geburtstag Eva </h3>
+        <p>Ticketpreis: Kostenlos €</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="kreuzer.clemens.02@web.de">
+          <input type="hidden" name="item_name" value="Ticket - Geburtstag Eva">
+          <input type="hidden" name="amount" value="Kostenlos">
+          <input type="hidden" name="currency_code" value="EUR">
+          <button type="submit">Ticket kaufen</button>
+        </form>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <h3>23.–25.05.2025 – Hamburg Reise</h3>
+        <p>Ticketpreis: 85,00 €</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="kreuzer.clemens.02@web.de">
+          <input type="hidden" name="item_name" value="Ticket - Hamburg Reise">
+          <input type="hidden" name="amount" value="35.00">
+          <input type="hidden" name="currency_code" value="EUR">
+          <button type="submit">Ticket kaufen</button>
+        </form>
+      </div>
+    </div>
+   <div class="card">
+      <div>
+        <h3>Individueller Termin – Lous Anal Orgie</h3>
+        <p>Ticketpreis: 35,99 €</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="kreuzer.clemens.02@web.de">
+          <input type="hidden" name="item_name" value="Ticket - Lous Anal Orgie">
+          <input type="hidden" name="amount" value="35.99">
+          <input type="hidden" name="currency_code" value="EUR">
+          <button type="submit">Ticket kaufen</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="aktuelles">
+    <h2>Aktuelles</h2>
+    <p>15.04.2025: Kräfte der Polizei Bonn entflaften die Bonner Bürgerin Mergott D. als oberlesbisch. Die weiteren Ermittlungen laufen noch durch die Lesben Polizistin Kayus W..</p>
+  </section>
+
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <form action="mailto:kreuzer.clemens.02@web.de" method="post" enctype="text/plain">
+      <label>Dein Name:</label>
+      <input type="text" name="name" required>
+      <label>Nachricht:</label>
+      <textarea name="message" rows="5" required></textarea>
+      <button type="submit">Senden</button>
+    </form>
+  </section>
+
+<section id="shop">
+  <h2>Unser Shop</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1000px; margin: auto; padding: 2em 1em;">
+
+    <!-- Artikel 1 -->
+    <div style="border: 1px solid #ccc; border-radius: 10px; padding: 1em; background: #fff; text-align: center;">
+      <img src="fass.jpg" alt="Wurf-Fass" style="max-width: 100%; border-radius: 5px; margin-bottom: 10px;">
+      <h3>Wurf-Fass</h3>
+      <p>10 Liter Petersfass – extrem aerodynamisch</p>
+      <p><strong>9,99 €</strong></p>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="kreuzer.clemens.02@web.de">
+        <input type="hidden" name="item_name" value="Wurf-Fass">
+        <input type="hidden" name="amount" value="9.99">
+        <input type="hidden" name="currency_code" value="EUR">
+        <button type="submit">Kaufen mit PayPal</button>
+      </form>
+    </div>
+
+    <!-- Artikel 2 -->
+    <div style="border: 1px solid #ccc; border-radius: 10px; padding: 1em; background: #fff; text-align: center;">
+      <img src="shirt.jpg" alt="Weißes T-Shirt" style="max-width: 100%; border-radius: 5px; margin-bottom: 10px;">
+      <h3>T-Shirt – Megahupen Edition</h3>
+      <p>>Weisses Shirt mit individeuellem Aufdruck der Brüste unserer weiblichen Menyeks, Größe M–XL</p>
+      <p><strong>19,90 €</strong></p>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="kreuzer.clemens.02@web.de">
+        <input type="hidden" name="item_name" value="Kreuzer T-Shirt Weiß">
+        <input type="hidden" name="amount" value="19.90">
+        <input type="hidden" name="currency_code" value="EUR">
+        <button type="submit">Kaufen mit PayPal</button>
+      </form>
+    </div>
+
+    <!-- Artikel 3 -->
+    <div style="border: 1px solid #ccc; border-radius: 10px; padding: 1em; background: #fff; text-align: center;">
+      <img src="poster.jpg" alt="Poster" style="max-width: 100%; border-radius: 5px; margin-bottom: 10px;">
+      <h3>Passis Jungfräulichkeit</h3>
+      <p>Eine (Leider nicht) unvergessliche Nacht mit unserer Quoten-Jungfrau</p>
+      <p><strong>4,99 €</strong></p>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="kreuzer.clemens.02@web.de">
+        <input type="hidden" name="item_name" value="Kreuzer Poster">
+        <input type="hidden" name="amount" value="4.99">
+        <input type="hidden" name="currency_code" value="EUR">
+        <button type="submit">Kaufen mit PayPal</button>
+      </form>
+    </div>
+
+    <!-- Artikel 4 -->
+    <div style="border: 1px solid #ccc; border-radius: 10px; padding: 1em; background: #fff; text-align: center;">
+      <img src="becher.jpg" alt="Becher" style="max-width: 100%; border-radius: 5px; margin-bottom: 10px;">
+      <h3>Übernachtung Im Hotel "Zur Schrubbkabiene"</h3>
+      <p>Einmaliges Wohlfühlerlebnis mit Wiederkehrenden unfreiwilligen Hosengrapschern</p>
+      <p><strong>28,50 €</strong></p>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="kreuzer.clemens.02@web.de">
+        <input type="hidden" name="item_name" value="Menyak Mode Becher">
+        <input type="hidden" name="amount" value="28.50">
+        <input type="hidden" name="currency_code" value="EUR">
+        <button type="submit">Kaufen mit PayPal</button>
+      </form>
+    </div>
+
+    <!-- Artikel 5 -->
+    <div style="border: 1px solid #ccc; border-radius: 10px; padding: 1em; background: #fff; text-align: center;">
+      <img src="hoodie.jpg" alt="Hoodie" style="max-width: 100%; border-radius: 5px; margin-bottom: 10px;">
+      <h3>Schwarzer Riesendildo</h3>
+      <p>Bequemer Riesencock (Ob benutzt oder nicht bischer noch unklar)</p>
+      <p><strong>24,90 €</strong></p>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="kreuzer.clemens.02@web.de">
+        <input type="hidden" name="item_name" value="Kreuzer Hoodie">
+        <input type="hidden" name="amount" value="24.90">
+        <input type="hidden" name="currency_code" value="EUR">
+        <button type="submit">Kaufen mit PayPal</button>
+      </form>
+    </div>
+
+    <!-- Artikel 6 -->
+    <div style="border: 1px solid #ccc; border-radius: 10px; padding: 1em; background: #fff; text-align: center;">
+      <img src="sticker.jpg" alt="Sticker-Set" style="max-width: 100%; border-radius: 5px; margin-bottom: 10px;">
+      <h3>Weisse Tür (Pappe) </h3>
+      <p>Eine völlig Standartmäßige weisse Tür aus billigem Material</p>
+      <p><strong>600,00 €</strong></p>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="kreuzer.clemens.02@web.de">
+        <input type="hidden" name="item_name" value="Kreuzer Sticker-Set">
+        <input type="hidden" name="amount" value="600.00">
+        <input type="hidden" name="currency_code" value="EUR">
+        <button type="submit">Kaufen mit PayPal</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+  <section id="feedback">
+    <h2>Feedback</h2>
+    <form>
+      <label for="feedback">Dein Feedback:</label>
+      <textarea id="feedback" rows="4" placeholder="Sag uns, was du denkst!"></textarea>
+      <button type="submit">Absenden</button>
+    </form>
+  </section>
+
+<section id="menyek">
+  <h2>Menyek-Funk</h2>
+  <div id="chat-box" style="height: 200px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; background: #fff; text-align: left;"></div>
+  <input type="text" id="chat-input" placeholder="Nachricht eingeben..." onkeypress="if(event.key==='Enter') sendMessage()" style="width: 100%; padding: 0.5em; margin-bottom: 10px;">
+  <button onclick="sendMessage()" style="padding: 0.5em 1em;">Senden</button>
+</section>
+
+<script>
+  function sendMessage() {
+    const input = document.getElementById('chat-input');
+    const chatBox = document.getElementById('chat-box');
+    if (input.value.trim() !== '') {
+      const msg = document.createElement('div');
+      msg.textContent = input.value;
+      chatBox.appendChild(msg);
+      input.value = '';
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  }
+</script>
+
+
+  <footer>
+    &copy; 2025 Clemens & Johannes Kreuzer
+  </footer>
+</body>
+</html>
