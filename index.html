@@ -399,6 +399,39 @@
   <input type="text" id="chat-input" placeholder="Nachricht eingeben..." onkeypress="if(event.key==='Enter') sendMessage()" style="width: 100%; padding: 0.5em; margin-bottom: 10px;">
   <button onclick="sendMessage()" style="padding: 0.5em 1em;">Senden</button>
 </section>
+  </script>
+<section id="spiel">
+  <h2>Fang den Ball!</h2>
+  <p>Klicke auf den Ball, bevor er verschwindet!</p>
+  <div class="card" style="flex-direction: column;">
+    <div id="game-area" style="position:relative; width:300px; height:300px; margin:20px auto; border:2px solid #333; background:#eef; border-radius: 10px;">
+      <div id="ball" style="width:40px; height:40px; background:red; border-radius:50%; position:absolute; cursor:pointer;"></div>
+    </div>
+    <p id="score">Punkte: 0</p>
+  </div>
+</section>
+<script>
+  const ball = document.getElementById('ball');
+  const scoreEl = document.getElementById('score');
+  let score = 0;
+
+  function moveBall() {
+    const x = Math.random() * 260;
+    const y = Math.random() * 260;
+    ball.style.left = x + 'px';
+    ball.style.top = y + 'px';
+  }
+
+  ball.onclick = function () {
+    score++;
+    scoreEl.textContent = "Punkte: " + score;
+    moveBall();
+  };
+
+  moveBall();
+  setInterval(moveBall, 1500);
+</script>
+
 
 <script>
   function sendMessage() {
@@ -413,6 +446,28 @@
     }
   }
 </script>
+  <section id="faq">
+  <h2>Häufige Fragen (FAQ)</h2>
+  <div class="card">
+    <div onclick="toggleAnswer('faq1')" style="cursor: pointer; font-weight: bold;">Vor welchem Meney sollte man sich am meisten in acht nehmen? </div>
+    <div id="faq1" style="display:none; margin-top: 0.5em;">Definitiv von Simon S-Hold. Er ist Geistesgestört und wird (vermurlich schon bald) Weltweit gefahndet</div>
+  </div>
+  <div class="card">
+    <div onclick="toggleAnswer('faq2')" style="cursor: pointer; font-weight: bold;">Warum ist mein Geburtstag einen Tag zu früh eingetragen?</div>
+    <div id="faq2" style="display:none; margin-top: 0.5em;">Das liegt daran, dass unsere Webdesigner vorher noch nie ein Webdesign durchgeführt haben</div>
+  </div>
+  <div class="card">
+    <div onclick="toggleAnswer('faq3')" style="cursor: pointer; font-weight: bold;">Wurde der Riesendildo schon benutzt?</div>
+    <div id="faq3" style="display:none; margin-top: 0.5em;">Ja!Der Dildo wird jeden Tag durch unseren Menyek Jquaoma genutzt</div>
+  </div>
+</section>
+<script>
+  function toggleAnswer(id) {
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+  }
+</script>
+
 
 
   <footer>
